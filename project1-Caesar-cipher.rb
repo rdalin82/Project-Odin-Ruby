@@ -5,6 +5,7 @@ def caesar_cipher(string, number)
   str_arr = string.split("")
   lower_case = Array("a".."z")
   upper_case = Array("A".."Z")
+  numbs = Array("1".."9")
   space = [" "]  
   str = "" 
   number = number % 26
@@ -22,19 +23,18 @@ def caesar_cipher(string, number)
     when space.include?(i)
 #      puts "space"
       str = str+space[0]
+    when numbs.include?(i)
+      str += numbs[numbs.index(i)]
     end
   end
-  puts string
-
-  puts str
-  puts ""
+ return str
 end
 
-caesar_cipher("What is up", 1)
-caesar_cipher("Abcdef", 1)
-caesar_cipher("abcDef", 1)
-caesar_cipher("Kat is Awesome", 1)
-caesar_cipher("I am going to the zoo", 1)
-caesar_cipher("BBBBCCCCCDDDDD", 1)
-caesar_cipher("wHat iS uPPP", 1)
+#caesar_cipher("What is up", 1)
+#caesar_cipher("Abcdef", 1)
+#caesar_cipher("abcDef", 1)
+#caesar_cipher("Kat is Awesome", 1)
+#caesar_cipher("I am going to the zoo", 1)
+#caesar_cipher("BBBBCCCCCDDDDD", 1)
+#caesar_cipher("wHat iS uPPP", 1)
 

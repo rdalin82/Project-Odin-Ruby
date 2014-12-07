@@ -30,5 +30,11 @@ def caesar_cipher(string, number)
  return str
 end
 
-
+#caesar_cipher("What is up", 1)
+#caesar_cipher("Abcdef", 1)
+#caesar_cipher("abcDef", 1)
+#caesar_cipher("Kat is Awesome", 1)
+#caesar_cipher("I am going to the zoo", 1)
+#caesar_cipher("BBBBCCCCCDDDDD", 1)
+#caesar_cipher("wHat iS uPPP", 1)
 

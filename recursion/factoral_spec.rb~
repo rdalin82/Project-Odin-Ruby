@@ -1,0 +1,9 @@
+require 'minitest/autorun'
+require './factoral' 
+
+describe Recursion do 
+	let(:recursion) {Recursion.new } 
+	it "should return correct number for 5" do 
+		assert_equal 120, recursion.factoral(5)
+	end 
+end 

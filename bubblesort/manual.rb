@@ -1,0 +1,42 @@
+class Bubble
+	def bubble_sort(array)
+		i = 0
+		swap = true 
+		length = array.length-1 
+		while swap 
+			swap = false 
+			i = 0
+			while i < length 
+				if array[i] > array[i+1]
+					temp = array[i]
+					array[i] = array[i+1]
+					array[i+1] = temp
+					swap = true
+					 
+				end 
+				i+=1 
+			end 
+		end 
+		array 
+
+	end 
+
+end 
+
+bubble = Bubble.new
+arr = []
+arr2 = []
+50000.times do 
+  arr << rand(1..10) 
+end 
+
+50000.times do 
+  arr2 << rand(1..10) 
+end 
+puts "start time" + Time.now.to_s
+bubble.bubble_sort(arr) 
+puts "finish time" + Time.now.to_s
+
+puts "start time" + Time.now.to_s
+arr2.sort
+puts "finish time" + Time.now.to_s

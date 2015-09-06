@@ -23,16 +23,14 @@ class BinarySearchTree
 
 	def add(value, node=@root)
 		if value > node.value
-			if node.right
-				n2 = node.right 
-				self.add(value, n2)
+			if node.right 
+				self.add(value, node.right)
 			else 
 				node.right = Node.new({:parent => node, :value=> value})
 			end 
 		elsif value < node.value
 			if node.left 
-				n3 = node.left 
-				self.add(value, n3)
+				self.add(value, node.left)
 			else 
 				node.left = Node.new({:parent=> node, :value=>value})
 			end 
@@ -41,4 +39,45 @@ class BinarySearchTree
 		end 
 	end 
 
+	def find_max
+		node = @root
+		while !node.nil?
+			value = node.value 
+			node = node.right 
+		end 
+		value 
+	end 
+
+	def find_min
+		node = @root
+		while !node.nil? 
+			value = node.value
+			node = node.left
+		end
+		value 
+	end 
+
+	def find_key(key, node=@root)
+		return false if node.nil?
+		return node.value if key == node.value 
+		if key > node.value 
+			find_key(key, node.right)
+		elsif key < node.value 
+			find_key(key, node.left)
+		else 
+			false
+		end 
+	end 
+
+	def convert_array
+		array = []
+		start = find_min
+		stop = find_max 
+		(start..stop).each do |i|
+			if find_key(i) != false 
+				array << find_key(i)
+			end
+		end 
+		array
+	end 
 end

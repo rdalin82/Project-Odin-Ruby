@@ -5,7 +5,7 @@ describe Bubble do
 	let(:bubble) { Bubble.new } 
 	let (:array1) do 
 		x= []
-		7000.times do 
+		100000.times do 
 			x << rand(0..9)
 		end 
 		x

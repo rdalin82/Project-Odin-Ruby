@@ -10,12 +10,15 @@ end
 
 class BinarySearchTree
 	attr_accessor :root
-	def initialize(root)
+	def initialize(root=Node.new)
 		@root = root
 	end 
 
 	def build_tree(array)
 		array.shuffle!
+		if @root.value == nil
+                  @root.value = array[0]
+                end 
 		array.each do |value|
 			self.add(value)
 		end
